@@ -137,6 +137,10 @@ html {
     font-size: 12px;
 }
 
+#header .mobile-menu-button {
+    display: none;
+}
+
 #header .mobile-menu-button,
 #header .search-button {
     float: right;

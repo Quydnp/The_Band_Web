@@ -17,4 +17,9 @@
     #header .search-button {
         display: none;
     }
+
+    #header .mobile-menu-button {
+        display: block;
+    }
+    
 }

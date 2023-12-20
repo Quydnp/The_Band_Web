@@ -22,7 +22,7 @@
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                         <i class="ti-angle-down"></i>
                     </a>
@@ -36,11 +36,11 @@
             <!-- End: Nav -->
 
             <!-- Begin: Search button -->
-            <a href="" class="search-button">
+            <a href="#" class="search-button">
                 <i class="ti-search"></i>
             </a>
 
-            <a href="" id="mobile-menu-button" class="mobile-menu-button">
+            <a href="#" id="mobile-menu-button" class="mobile-menu-button">
                 <i class="ti-menu"></i>
             </a>
 
@@ -191,10 +191,10 @@
                         <form id="contact-form" action="">
                             <div class="row">
                                 <div class="col col-2 contact-input">
-                                    <input type="text" required placeholder="Name">
+                                    <input style="width: 100%" type="text" required placeholder="Name">
                                 </div>
                                 <div class="col col-2 contact-input">
-                                    <input type="email" required placeholder="Email">
+                                    <input style="width: 100%" type="email" required placeholder="Email">
                                 </div>
                             </div>
                             <div class="row">
@@ -231,6 +231,7 @@
         var mobileMenuBtn = document.getElementById('mobile-menu-button');
         var headerHeight = header.clientHeight;
         
+        // Close/Open mobile menu
         mobileMenuBtn.onclick = function() {
             var isClose = header.clientHeight === headerHeight;
             if (isClose) {
@@ -239,6 +240,22 @@
                 header.style.height = null;
             }
         }
+
+        // Automatically close navbar when click to any choice
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for (var index = 0; index < menuItems.length; index++) {
+            var menuItem = menuItems[index]
+
+            menuItem.onclick = function () {
+                header.style.height = null;
+            }
+            
+        }
+
+        //Stop back to the head of page when click #mobile-menu-button
+        document.getElementById("mobile-menu-button").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        });
     </script>
     <div class="modal js-modal">
         <div class="modal-container js-modal-container">
