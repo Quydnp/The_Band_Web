@@ -76,6 +76,7 @@ html {
     right: 0;
     left: 0;
     z-index: 1;
+    overflow: hidden;
 }
 
 #nav {
@@ -136,16 +137,22 @@ html {
     font-size: 12px;
 }
 
+#header .mobile-menu-button,
 #header .search-button {
     float: right;
     padding: 0px 23px;
     text-decoration: none;
+}
+#header .mobile-menu-button:hover {
+    color : #000;
+    background-color: #ccc;
 }
 
 #header .search-button:hover {
     background-color: #f44336;
 }
 
+#header .ti-menu,
 #header .ti-search {
     color: #fff;
     font-size: 16px;
@@ -499,3 +506,4 @@ label.modal-label{
         transform: translateY(0);
     }
 }
+

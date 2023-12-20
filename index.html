@@ -8,6 +8,7 @@
     <title>The Band</title>
     <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/themify-icons-font/themify-icons/themify-icons.css">
 </head>
 
@@ -37,6 +38,10 @@
             <!-- Begin: Search button -->
             <a href="" class="search-button">
                 <i class="ti-search"></i>
+            </a>
+
+            <a href="" id="mobile-menu-button" class="mobile-menu-button">
+                <i class="ti-menu"></i>
             </a>
 
             <!-- End: Search button -->
@@ -183,7 +188,7 @@
                         </div>
                     </div>
                     <div class="col col-2 contact-info">
-                        <form action="">
+                        <form id="contact-form" action="">
                             <div class="row">
                                 <div class="col col-2 contact-input">
                                     <input type="text" required placeholder="Name">
@@ -205,7 +210,7 @@
             </div>
             <!-- End: Contact section -->
             <div class="map-section">
-                <img src="assets/img/map.jpg" class="map-img" alt="Map">
+                <img width="100%" src="./assets/img/map.jpg" class="map-img" alt="Map">
             </div>
         </div>
         
@@ -220,8 +225,21 @@
             </div>
             <p class="copyright">Powered by <a href="">w3.css</a></p>
         </div>
-
     </div>
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenuBtn = document.getElementById('mobile-menu-button');
+        var headerHeight = header.clientHeight;
+        
+        mobileMenuBtn.onclick = function() {
+            var isClose = header.clientHeight === headerHeight;
+            if (isClose) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+    </script>
     <div class="modal js-modal">
         <div class="modal-container js-modal-container">
             <div class="modal-close js-modal-close">
